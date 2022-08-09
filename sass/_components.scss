@@ -178,3 +178,156 @@
     text-align: center;
     padding: 2.5rem;
 }
+
+// ------ HOTEL VIEW GALLERY ------ //
+.gallery {
+    display: flex;
+
+    &__photo {
+        width: 100%;
+        display: block;
+    }
+}
+
+.overview {
+    display: flex;
+    align-items: center;
+
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+    }
+
+    &__stars {
+        // flex: 1; similar to: margin-right: auto but occupies entire space
+        margin-right: auto; // is better solution
+        margin-left: 2rem;
+        display: flex; //to allign to center perfectly
+    }
+
+    &__location {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+    }
+
+    &__rating {
+        background-color: var(--color-primary-light);
+        color: white;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-average {
+            font-size: 2.25rem;
+        }
+
+        &-count {
+            font-size: .8rem;
+            text-transform: uppercase;
+        }
+    }
+
+    img {
+        height: 1.75rem;
+        width: 1.75rem;
+    }
+}
+
+// ------ DETAILS ------ //
+.detail {
+
+    .description {
+        p:not(:last-of-type) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .list {
+        list-style: none;
+        margin: 3rem 0;
+        padding: 3rem 0;
+        border-top: var();
+
+        display: flex;
+        flex-wrap: wrap;
+
+        &__item {
+            flex: 0 0 50%;
+            margin-bottom: .7rem;
+        }
+    }
+
+    .recommend {
+        font-size: 1.3rem;
+        color: var(--color-grey-dark-3);
+        
+        display: flex;
+        align-items: center;
+
+        &__count {
+            margin-right: auto;
+        }
+
+        &__friends {
+
+        }
+
+        &__photo {
+            box-sizing: content-box; //to mantain image size after 3px border box
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            border: 3px solid white;
+
+            &:not(:last-child) {
+                margin-right: -1.5rem;
+            }
+        }
+    }
+}
+
+// ------ BTNs ------ //
+
+.btn-inline {
+    color: var(--color-primary);
+    background-color: transparent;
+    font-size: inherit;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba($color: black, $alpha: .2);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
