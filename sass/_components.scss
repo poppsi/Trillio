@@ -338,7 +338,69 @@
     }
 }
 
+
+// ------ CTA ------ //
+
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+
+    &__book-now {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
 // ------ BTNs ------ //
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: white;
+    position: relative;
+    overflow: hidden;
+
+    &__visible {
+        display: inline-block;
+        padding: 2rem 7.5rem;
+        transition: all .1s;
+    }
+
+    &__invisible {
+        display: inline-block;
+        position: absolute;
+        padding: 2rem 0;
+        height: 100%;
+        width: 100%;
+        top: -100%;
+        left: 0;
+        transition: all .2s;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover &__visible {
+        visibility: hidden;
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
 
 .btn-inline {
     color: var(--color-primary);

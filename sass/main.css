@@ -301,10 +301,10 @@ body {
   background-color: var(--color-primary-light);
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  -webkit-transition: width .4s .2s, -webkit-transform .4s;
-  transition: width .4s .2s, -webkit-transform .4s;
-  transition: transform .4s, width .4s .2s;
-  transition: transform .4s, width .4s .2s, -webkit-transform .4s;
+  -webkit-transition: width .4s .2s, -webkit-transform .4s;
+  transition: width .4s .2s, -webkit-transform .4s;
+  transition: transform .4s, width .4s .2s;
+  transition: transform .4s, width .4s .2s, -webkit-transform .4s;
 }
 
 .side-nav__item:hover::before {
@@ -531,6 +531,68 @@ body {
 .detail .review__rating {
   font-size: 2.25rem;
   color: var(--color-primary-light);
+}
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.cta__book-now {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn__visible {
+  display: inline-block;
+  padding: 2rem 7.5rem;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+}
+
+.btn__invisible {
+  display: inline-block;
+  position: absolute;
+  padding: 2rem 0;
+  height: 100%;
+  width: 100%;
+  top: -100%;
+  left: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:hover .btn__visible {
+  visibility: hidden;
+}
+
+.btn:hover .btn__invisible {
+  top: 0;
+}
+
+.btn:focus {
+  outline: none;
+  -webkit-animation: pulsate 1s infinite;
+          animation: pulsate 1s infinite;
 }
 
 .btn-inline {
